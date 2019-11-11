@@ -26,6 +26,10 @@ class test_db(models.Model):
     v20 = models.FloatField()
     
     def __str__(self):
-        return '{0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}, {17}, {18}, {19}, {20}, {21}, {22}'.format(self.id, self.date, self.gps, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20)
+        return 'ID:{0} TIME:{1} GPS:{2} VALUES:({3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}, {17}, {18}, {19}, {20}, {21}, {22})'.format(self.id, self.date, self.gps, 
+                self.v1, self.v2, self.v3, self.v4, self.v5, 
+                self.v6, self.v7, self.v8, self.v9, self.v10, 
+                self.v11, self.v12, self.v13, self.v14, self.v15, 
+                self.v16, self.v17, self.v18, self.v19, self.v20)
 
 
