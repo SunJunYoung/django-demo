@@ -1,2 +1,5 @@
 myvenv
 .vscode
+*~
+__pycache__
+*.pyc
