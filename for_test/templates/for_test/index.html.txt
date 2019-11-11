@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Information</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <td><B>Date</B></td>
+            <td><B>GPS</B></td>
+            <td><B>V1</B></td>
+            <td><B>V2</B></td>
+            <td><B>V2</B></td>
+            <td><B>V2</B></td>
+            <td><B>V3</B></td>
+            <td><B>V4</B></td>
+            <td><B>V5</B></td>
+            <td><B>V6</B></td>
+            <td><B>V7</B></td>
+            <td><B>V8</B></td>
+            <td><B>V9</B></td>
+            <td><B>V10</B></td>
+            <td><B>V11</B></td>
+            <td><B>V12</B></td>
+            <td><B>V13</B></td>
+            <td><B>V14</B></td>
+            <td><B>V15</B></td>
+            <td><B>V16</B></td>
+            <td><B>V17</B></td>
+            <td><B>V18</B></td>
+            <td><B>V19</B></td>
+            <td><B>V20</B></td>
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for post in posts %} <!--Change right name -->
+        <tr>
+            <td> {{ post.date }} </td>
+            <td> {{ post.gps }} </td>
+            <td> {{ post.v1 }} </td>
+            <td> {{ post.v2 }}</td>
+            <td> {{ post.v3 }} </td>
+            <td> {{ post.v4 }}</td>
+            <td> {{ post.v5 }} </td>
+            <td> {{ post.v6 }}</td>
+            <td> {{ post.v7 }} </td>
+            <td> {{ post.v8 }}</td>
+            <td> {{ post.v9 }} </td>
+            <td> {{ post.v10 }}</td>
+            <td> {{ post.v11 }} </td>
+            <td> {{ post.v12 }}</td>
+            <td> {{ post.v13 }} </td>
+            <td> {{ post.v14 }}</td>
+            <td> {{ post.v15 }} </td>
+            <td> {{ post.v16 }}</td>
+            <td> {{ post.v17 }} </td>
+            <td> {{ post.v18 }}</td>
+            <td> {{ post.v19 }} </td>
+            <td> {{ post.v20 }}</td>
+        </tr>
+        {% endfor %}
+        <tbody>
+    </table>
+</body>
