@@ -6,7 +6,7 @@ class test_db(models.Model):
     latitude = models.CharField(max_length=15)
     longitude = models.CharField(max_length=15)
     equip_id = models.IntegerField()
-    Serial = models.FloatField()
+    serial = models.FloatField()
     v1 = models.FloatField()
     v2 = models.FloatField()
     v3 = models.FloatField()
