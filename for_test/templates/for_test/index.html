@@ -13,7 +13,6 @@
     <table class="table table-striped">
         <thead>
         <tr>
-            <td><B> ID </B></td>
             <td><B>Date</B></td>
             <td><B>Latitude</B></td>
             <td><B>Longitude</B></td>
@@ -39,13 +38,11 @@
             <td><B>V18</B></td>
             <td><B>V19</B></td>
             <td><B>V20</B></td>
-
         </tr>
         </thead>
         <tbody>
         {% for post in posts %} <!--Change right name -->
         <tr>
-            <td> {{ post.id }} </td>
             <td> {{ post.date }} </td>
             <td> {{ post.latitude }} </td>
             <td> {{ post.longitude }} </td>
