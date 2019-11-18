@@ -13,8 +13,12 @@
     <table class="table table-striped">
         <thead>
         <tr>
+            <td><B> ID </B></td>
             <td><B>Date</B></td>
-            <td><B>GPS</B></td>
+            <td><B>Latitude</B></td>
+            <td><B>Longitude</B></td>
+            <td><B>Equip_id</B></td>
+            <td><B>Serial</B></td>
             <td><B>V1</B></td>
             <td><B>V2</B></td>
             <td><B>V3</B></td>
@@ -41,8 +45,12 @@
         <tbody>
         {% for post in posts %} <!--Change right name -->
         <tr>
+            <td> {{ post.id }} </td>
             <td> {{ post.date }} </td>
-            <td> {{ post.gps }} </td>
+            <td> {{ post.latitude }} </td>
+            <td> {{ post.longitude }} </td>
+            <td> {{ post.equip_id }} </td>
+            <td> {{ post.serial }} </td>
             <td> {{ post.v1 }} </td>
             <td> {{ post.v2 }}</td>
             <td> {{ post.v3 }} </td>
