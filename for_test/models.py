@@ -3,10 +3,10 @@ from django.db import models
 # Create your models here.
 class test_db(models.Model):
     date = models.DateTimeField(auto_now_add=True)
-    latitude = models.CharField(max_length=15)
-    longitude = models.CharField(max_length=15)
-    equip_id = models.IntegerField()
-    serial = models.FloatField()
+    latitude = models.CharField(null=True, max_length=15)
+    longitude = models.CharField(null=True, max_length=15)
+    equip_id = models.IntegerField(null=True)
+    serial = models.FloatField(null=True)
     v1 = models.FloatField()
     v2 = models.FloatField()
     v3 = models.FloatField()
