@@ -7,12 +7,27 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+ <style>
+ 	body{
+ 		margin-top: 5%;
+ 		margin-left: 30px;
+ 		margin-right: 30px;
+ 	}
+ 	table{
+ 		table-layout:auto;word-break:break-all;
+ 		text-align:center;
+ 	}
+ </style>
 </head>
 <body>
-<div class="container">
-    <table class="table table-striped">
+<div class ="page-header">
+		<h1>Data info</h1>
+	</div>
+<div class=".container">
+    <table class="table table-condensed table-hover table-stripe table-bordered ">
         <thead>
-        <tr>
+        <tr class ="info">
             <td><B>Date</B></td>
             <td><B>Latitude</B></td>
             <td><B>Longitude</B></td>
@@ -72,4 +87,27 @@
         {% endfor %}
         <tbody>
     </table>
+</div>
+<div class="text-center">
+      {% if posts.has_previous %}
+      <li class="page-item"><a class = "page-link" href="?page={{ posts.previous_page_number }}">&laquo;</a></li>
+    {% else %}
+      <li class="page-item disabled"><span>&laquo;</span></li>
+    {% endif %}
+    {% for i in posts.paginator.page_range %}
+      {% if posts.number == i %}
+        <li class="page-item active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+      {% else %}
+        <li class= "page-item"><a class = "page-link" href="?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if posts.has_next %}
+      <li class = "page-item"><a class = "page-link" href="?page={{ posts.next_page_number }}">&raquo;</a></li>
+    {% else %}
+      <li class="page-item disabled"><span>&raquo;</span></li>
+    {% endif %}
+  </ul>
+{% endif %}
+</div>
 </body>
+</html>

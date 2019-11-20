@@ -5,6 +5,7 @@ from rest_framework.pagination import PageNumberPagination
 from .models import test_db
 from .serializers import TestSerializer
 from datetime import datetime
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 class TestViewset(viewsets.ModelViewSet):
@@ -28,5 +29,16 @@ class TestViewset(viewsets.ModelViewSet):
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 def indexView(request):
-    posts = test_db.objects.order_by('-id')
+    posts_list = test_db.objects.order_by('-id')
+
+    paginator = Paginator(posts_list,10)
+
+    page = request.GET.get('page')
+    
+    try:
+        posts = paginator.get_page(page)
+    except PageNotAnInteger:
+        posts = paginator.get_page(1)
+    except EmptyPage:
+        posts = paginator.get_page(paginator.num_pages)
     return render(request, 'for_test/index.html', { 'posts' : posts })
