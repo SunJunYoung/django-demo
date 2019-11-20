@@ -1,7 +1,9 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 from rest_framework import viewsets, views, status
 from rest_framework.response import Response
 from rest_framework.pagination import PageNumberPagination
+from rest_framework.settings import api_settings
 from .models import test_db
 from .serializers import TestSerializer
 from datetime import datetime
@@ -31,7 +33,8 @@ class TestViewset(viewsets.ModelViewSet):
 def indexView(request):
     posts_list = test_db.objects.order_by('-id')
 
-    paginator = Paginator(posts_list,10)
+    page_size = api_settings.PAGE_SIZE
+    paginator = Paginator(posts_list,page_size)
 
     page = request.GET.get('page')
     

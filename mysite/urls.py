@@ -22,7 +22,6 @@ from for_test import views
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
-    #path('', include(router.urls)),
     path('admin/', admin.site.urls),
     path('', include('for_test.urls')),
 ]
