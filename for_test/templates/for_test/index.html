@@ -7,12 +7,20 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+ <style>
+ 	table{
+ 		table-layout:auto;word-break:break-all;
+ 		margin:auto;
+ 		text-align:center;
+ 	}
+ </style>
 </head>
 <body>
-<div class="container">
-    <table class="table table-striped">
+<div class=".container">
+    <table class="table table-condensed table-hover table-stripe">
         <thead>
-        <tr>
+        <tr class ="info">
             <td><B>Date</B></td>
             <td><B>Latitude</B></td>
             <td><B>Longitude</B></td>
@@ -72,4 +80,15 @@
         {% endfor %}
         <tbody>
     </table>
+</div>
+
+    <ul class = "pagination justify-content-center">
+    	<li class="page-item"><a class = "page-link" href="#">Prev</a></li>
+    	{% for page in total_page %}
+    		<li class="page-item"><a class = "page-link" href="#">{{ page }}</a></li>
+    	{% endfor %}
+    	<li class="page-item"><a class = "page-link" href="#">Next</a></li>
+    </ul>
+
 </body>
+</html>
