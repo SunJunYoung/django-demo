@@ -17,6 +17,7 @@ from django.contrib import admin
 from rest_framework import routers
 from django.urls import path, include
 from for_test import views
+from company import views
 
 
 # Wire up our API using automatic URL routing.
@@ -24,4 +25,5 @@ from for_test import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('for_test.urls')),
+    path('', include('company.urls')),
 ]
